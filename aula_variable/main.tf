@@ -24,11 +24,10 @@ resource "aws_instance" "web" {
 }
 
 resource "aws_instance" "webwest" {
-  ami           = data.aws_ami.ubuntu.id
+  ami           = var.image_id
   instance_type = "t2.micro"
-  provider = aws.west
 
   tags = {
-    Name = "HelloWorld"
+    Name = "HelloWorld1"
   }
 }
